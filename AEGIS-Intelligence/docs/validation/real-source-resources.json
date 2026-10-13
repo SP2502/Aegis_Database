@@ -1,0 +1,6 @@
+{
+  "returncode": 0,
+  "elapsed_seconds": 25.979203896000058,
+  "process_peak_rss_bytes": 1119535104,
+  "input_mode": "downloaded upstream snapshots staged on disk; production Go HTTP path not used"
+}

@@ -1,0 +1,14 @@
+?   	aegis-intelligence/cmd/aegis-bench	[no test files]
+?   	aegis-intelligence/cmd/aegis-builder	[no test files]
+?   	aegis-intelligence/cmd/aegis-keygen	[no test files]
+?   	aegis-intelligence/cmd/aegis-verify	[no test files]
+?   	aegis-intelligence/internal/benchindex	[no test files]
+ok  	aegis-intelligence/internal/fetcher	(cached)
+ok  	aegis-intelligence/internal/parser	(cached)
+ok  	aegis-intelligence/internal/pipeline	(cached)
+ok  	aegis-intelligence/internal/sources	(cached)
+ok  	aegis-intelligence/internal/validation	(cached)
+ok  	aegis-intelligence/pkg/dataset	1.010s
+ok  	aegis-intelligence/pkg/domain	(cached)
+ok  	aegis-intelligence/pkg/release	(cached)
+ok  	aegis-intelligence/pkg/updater	(cached)

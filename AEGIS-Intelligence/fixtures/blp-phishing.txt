@@ -1,0 +1,6 @@
+# Title: Phishing Block List
+# Fixture only; not a real upstream list
+# Format: domains
+# License: MIT
+danger.test
+phishing.test

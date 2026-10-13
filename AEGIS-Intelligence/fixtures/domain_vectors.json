@@ -1,0 +1,14 @@
+[
+ {"input":"EXAMPLE.Com.","value":"example.com","kind":"DOMAIN"},
+ {"input":"bücher.example","value":"xn--bcher-kva.example","kind":"DOMAIN"},
+ {"input":"ＢÜCHER。EXAMPLE。","value":"xn--bcher-kva.example","kind":"DOMAIN"},
+ {"input":"::ffff:192.0.2.1","value":"192.0.2.1","kind":"IP"},
+ {"input":"2001:db8::1","value":"2001:db8::1","kind":"IP"},
+ {"input":" example.com","error":true},
+ {"input":"x..com","error":true},
+ {"input":"https://example.com","error":true},
+ {"input":"example.com:53","error":true},
+ {"input":"_srv.example.com","error":true},
+ {"input":"example.com..","error":true},
+ {"input":"-bad.example","error":true}
+]

@@ -1,0 +1,40 @@
+AEGIS Intelligence source attribution
+
+Source: The Block List Project (blocklistproject/Lists)
+Project: https://github.com/blocklistproject/Lists
+Source URL and SHA-256 for every fetched list appear in the signed manifest.
+
+License review, 2026-10-12:
+The upstream repository LICENSE contains the Unlicense (retained alongside this
+notice). Its README also identifies Unlicense. The four generated domain-only
+files independently declare "License: MIT" in their headers. Both are permissive;
+AEGIS records this discrepancy instead of silently rewriting it. No GPL or
+share-alike source has been separately enabled. Upstream aggregation and future
+license changes must be reviewed when changing sources.
+
+Attribution retained for the generated lists: The Block List Project contributors.
+The generated headers supply no year or additional copyright holder. This notice
+does not invent an upstream copyright year. The standard MIT permission text is
+retained conservatively to accompany the generated files' MIT declaration:
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+of the Software, and to permit persons to whom the Software is furnished to do
+so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+Keep this notice and BLOCKLISTPROJECT-LICENSE.txt with distributed dataset assets
+and inside AEGIS client third-party notices. A source may contain upstream errors,
+and a permissive license declaration does not establish dataset accuracy.

@@ -1,0 +1,6 @@
+# Title: Gambling Block List
+# Fixture only; not a real upstream list
+# Format: domains
+# License: MIT
+shared.test
+casino.test

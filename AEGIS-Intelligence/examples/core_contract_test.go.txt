@@ -1,0 +1,10 @@
+package contract
+import(
+ "testing"
+ core "aegis/core/domain"
+ "aegis/core/policy"
+ cloud "aegis-intelligence/pkg/domain"
+ "aegis-intelligence/pkg/dataset"
+)
+func TestActualCoreNormalization(t *testing.T){for _,s:=range []string{"EXAMPLE.Com.","bücher.example","ＢÜCHER。EXAMPLE。","::ffff:192.0.2.1","x..com","_srv.example.com","x.test:53"}{a,ae:=core.Normalize(s);b,be:=cloud.Normalize(s);if (ae==nil)!=(be==nil)||ae==nil&&(a.Value!=b.Value||string(a.Kind)!=string(b.Kind)){t.Fatalf("normalization drift: %q",s)}}}
+func TestActualCoreMatchSemantics(t *testing.T){rules:=[]policy.Rule{{ID:"exact",Domain:"exact.test",Scope:policy.Exact,Category:"custom",Action:policy.Block,Source:"user",Enabled:true,Revision:1},{ID:"suffix",Domain:"parent.test",Scope:policy.Subdomains,Category:"custom",Action:policy.Block,Source:"user",Enabled:true,Revision:1}};s,e:=policy.Compile(rules,policy.Options{Version:1,CustomEnabled:true});if e!=nil{t.Fatal(e)};raw,e:=dataset.Compile([]dataset.Entry{{Domain:"exact.test",Exact:1},{Domain:"parent.test",Subdomains:1}});if e!=nil{t.Fatal(e)};r,e:=dataset.Open(raw);if e!=nil{t.Fatal(e)};for _,q:=range []string{"exact.test","child.exact.test","parent.test","child.parent.test","deep.child.parent.test","notparent.test","EXACT.TEST.","127.0.0.1"}{d,e:=s.Evaluate(q);if e!=nil{t.Fatal(e)};mask,e:=r.Lookup(q);if e!=nil{t.Fatal(e)};if (d.Action==policy.Block)!=(mask!=0){t.Fatal("scope drift",q)}}}

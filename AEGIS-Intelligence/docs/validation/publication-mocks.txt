@@ -1,0 +1,11 @@
+test_api_failure_is_not_bootstrap (__main__.PublicationTests.test_api_failure_is_not_bootstrap) ... ok
+test_existing_tag_or_release_never_overwritten (__main__.PublicationTests.test_existing_tag_or_release_never_overwritten) ... ok
+test_failed_upload_validation_never_publishes (__main__.PublicationTests.test_failed_upload_validation_never_publishes) ... ok
+test_previous_and_bootstrap (__main__.PublicationTests.test_previous_and_bootstrap) ... ok
+test_verified_draft_publication (__main__.PublicationTests.test_verified_draft_publication) ... ok
+test_wrong_key_or_untrusted_branch_has_no_github_writes (__main__.PublicationTests.test_wrong_key_or_untrusted_branch_has_no_github_writes) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.659s
+
+OK

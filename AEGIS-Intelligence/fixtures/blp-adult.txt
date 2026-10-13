@@ -1,0 +1,8 @@
+# Title: Porn Block List
+# Fixture only; not a real upstream list
+# Format: domains
+# License: MIT
+EXAMPLE.ONE.test.
+shared.test
+bücher.example
+shared.test

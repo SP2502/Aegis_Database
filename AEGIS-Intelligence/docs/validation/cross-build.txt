@@ -1,0 +1,4 @@
+Windows amd64 commands/packages: cross-build passed
+macOS arm64 commands/packages: cross-build passed
+Android arm64 portable packages: cross-build passed
+These are compilation checks, not native execution or OS durability tests.

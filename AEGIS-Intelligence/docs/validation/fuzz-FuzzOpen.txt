@@ -1,0 +1,6 @@
+fuzz: elapsed: 0s, gathering baseline coverage: 0/2 completed
+fuzz: elapsed: 0s, gathering baseline coverage: 2/2 completed, now fuzzing with 2 workers
+fuzz: elapsed: 3s, execs: 185011 (61662/sec), new interesting: 2 (total: 4)
+fuzz: elapsed: 5s, execs: 299242 (55594/sec), new interesting: 2 (total: 4)
+PASS
+ok  	aegis-intelligence/pkg/dataset	5.058s

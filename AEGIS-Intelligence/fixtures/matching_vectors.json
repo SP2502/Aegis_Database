@@ -1,0 +1,26 @@
+[
+  {
+    "query": "EXAMPLE.ONE.test.",
+    "mask": 1
+  },
+  {
+    "query": "shared.test",
+    "mask": 7
+  },
+  {
+    "query": "child.shared.test",
+    "mask": 0
+  },
+  {
+    "query": "danger.test",
+    "mask": 12
+  },
+  {
+    "query": "b\u00fccher.example",
+    "mask": 1
+  },
+  {
+    "query": "safe.test",
+    "mask": 0
+  }
+]

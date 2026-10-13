@@ -1,0 +1,9 @@
+go: creating new go.mod: module aegis-contract-check
+go: to add module requirements and sums:
+	go mod tidy
+=== RUN   TestActualCoreNormalization
+--- PASS: TestActualCoreNormalization (0.00s)
+=== RUN   TestActualCoreMatchSemantics
+--- PASS: TestActualCoreMatchSemantics (0.00s)
+PASS
+ok  	aegis-contract-check	0.003s

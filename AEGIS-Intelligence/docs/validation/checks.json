@@ -1,0 +1,29 @@
+{
+  "go": "go1.27.2",
+  "go_build": "passed",
+  "gofmt": "passed",
+  "go_vet": "passed",
+  "unit_tests": "passed",
+  "race": "passed",
+  "fuzz_targets": [
+    "FuzzParse",
+    "FuzzOpen",
+    "FuzzManifest",
+    "FuzzNormalize"
+  ],
+  "fuzz_seconds_per_target": 5,
+  "actual_core_parity": "passed",
+  "offline_smoke": "passed",
+  "publication_mock_tests": 6,
+  "workflow_yaml_and_static_checks": "passed",
+  "shell_syntax": "passed",
+  "real_source_local_build": "passed",
+  "production_go_http_upstream": "not tested: direct DNS/network unavailable",
+  "github_release_operation": "not performed",
+  "monthly_schedule_enabled": false,
+  "cross_builds": [
+    "windows/amd64 commands+packages",
+    "darwin/arm64 commands+packages",
+    "android/arm64 portable packages"
+  ]
+}

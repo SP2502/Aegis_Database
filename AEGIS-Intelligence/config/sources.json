@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "allowed_hosts": [
+    "blocklistproject.github.io"
+  ],
+  "sources": [
+    {
+      "id": "blp-adult",
+      "url": "https://blocklistproject.github.io/Lists/alt-version/porn-nl.txt",
+      "license": "Unlicense (repository); MIT (generated header)",
+      "category": "adult",
+      "format": "domains",
+      "enabled": true,
+      "required": true,
+      "max_download_bytes": 134217728,
+      "minimum_records": 100000,
+      "max_malformed_rate": 0.01,
+      "max_duplicate_rate": 0.5,
+      "semantics": "exact",
+      "required_header": "# Title: Porn Block List",
+      "required_license_header": "# License: MIT"
+    },
+    {
+      "id": "blp-gambling",
+      "url": "https://blocklistproject.github.io/Lists/alt-version/gambling-nl.txt",
+      "license": "Unlicense (repository); MIT (generated header)",
+      "category": "gambling",
+      "format": "domains",
+      "enabled": true,
+      "required": true,
+      "max_download_bytes": 134217728,
+      "minimum_records": 10000,
+      "max_malformed_rate": 0.01,
+      "max_duplicate_rate": 0.5,
+      "semantics": "exact",
+      "required_header": "# Title: Gambling Block List",
+      "required_license_header": "# License: MIT"
+    },
+    {
+      "id": "blp-malware",
+      "url": "https://blocklistproject.github.io/Lists/alt-version/malware-nl.txt",
+      "license": "Unlicense (repository); MIT (generated header)",
+      "category": "malware",
+      "format": "domains",
+      "enabled": true,
+      "required": true,
+      "max_download_bytes": 134217728,
+      "minimum_records": 100000,
+      "max_malformed_rate": 0.01,
+      "max_duplicate_rate": 0.5,
+      "semantics": "exact",
+      "required_header": "# Title: Malware Block List",
+      "required_license_header": "# License: MIT"
+    },
+    {
+      "id": "blp-phishing",
+      "url": "https://blocklistproject.github.io/Lists/alt-version/phishing-nl.txt",
+      "license": "Unlicense (repository); MIT (generated header)",
+      "category": "phishing",
+      "format": "domains",
+      "enabled": true,
+      "required": true,
+      "max_download_bytes": 134217728,
+      "minimum_records": 50000,
+      "max_malformed_rate": 0.01,
+      "max_duplicate_rate": 0.5,
+      "semantics": "exact",
+      "required_header": "# Title: Phishing Block List",
+      "required_license_header": "# License: MIT"
+    }
+  ],
+  "minimum_domains": 200000,
+  "max_count_change": 0.35,
+  "critical_domains": [
+    "google.com",
+    "github.com",
+    "microsoft.com",
+    "apple.com",
+    "cloudflare.com",
+    "wikipedia.org",
+    "gov.in",
+    "co.in"
+  ]
+}

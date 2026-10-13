@@ -1,0 +1,2 @@
+{"codec": "gzip", "level": 9, "raw_bytes": 40000165, "compressed_bytes": 4536069, "compression_ms": 4194.060613999909, "decompression_ms": 60.68614299999808, "process_peak_rss_bytes": 138473472, "python": "3.12.14", "implementation": "Python zlib"}
+{"codec": "zstd", "level": 3, "raw_bytes": 40000165, "compressed_bytes": 1822599, "compression_ms": 70.61468500000956, "decompression_ms": 34.875631000090834, "process_peak_rss_bytes": 91578368, "python": "3.12.14", "implementation": "python-zstandard 0.25.0"}

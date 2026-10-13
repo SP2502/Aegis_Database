@@ -1,0 +1,7 @@
+fuzz: elapsed: 0s, gathering baseline coverage: 0/4 completed
+fuzz: elapsed: 0s, gathering baseline coverage: 4/4 completed, now fuzzing with 2 workers
+fuzz: elapsed: 3s, execs: 30703 (10227/sec), new interesting: 96 (total: 100)
+fuzz: elapsed: 6s, execs: 30703 (0/sec), new interesting: 96 (total: 100)
+fuzz: elapsed: 6s, execs: 30703 (0/sec), new interesting: 96 (total: 100)
+PASS
+ok  	aegis-intelligence/pkg/domain	6.015s

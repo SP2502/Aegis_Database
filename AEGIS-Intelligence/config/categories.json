@@ -1,0 +1,18 @@
+[
+  {
+    "id": "adult",
+    "bit": 1
+  },
+  {
+    "id": "gambling",
+    "bit": 2
+  },
+  {
+    "id": "malware",
+    "bit": 4
+  },
+  {
+    "id": "phishing",
+    "bit": 8
+  }
+]
