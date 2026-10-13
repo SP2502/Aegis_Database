@@ -138,3 +138,4 @@ assume the same cost model.
 
 `config/categories.json` documents format 1's fixed category table. The Go table
 is authoritative; changing the JSON alone does not redefine the wire format.
+# Aegis Database Pipeline
