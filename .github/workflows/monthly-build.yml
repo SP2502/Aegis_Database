@@ -1,0 +1,73 @@
+name: Monthly signed dataset
+on:
+  schedule:
+    - cron: '37 3 1 * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: intelligence-publication
+  cancel-in-progress: false
+jobs:
+  release:
+    if: github.ref == 'refs/heads/main' && github.repository == vars.AEGIS_RELEASE_REPOSITORY && !github.event.repository.fork
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - uses: actions/setup-go@d35c59abb061a4a6fb18e82ac0862c26744d6ab5 # v5.5.0
+        with:
+          go-version: '1.27.x' # latest patch in the locally validated minor series
+          cache: false
+      - name: Test before accessing signing secrets
+        run: |
+          test -z "$(gofmt -l cmd internal pkg)"
+          go vet ./...
+          go test ./...
+          go test -race ./...
+          bash scripts/offline-smoke.sh
+          mkdir -p bin
+          go build -trimpath -buildvcs=false -o bin/aegis-builder ./cmd/aegis-builder
+          go build -trimpath -buildvcs=false -o bin/aegis-verify ./cmd/aegis-verify
+          go build -trimpath -buildvcs=false -o bin/aegis-keygen ./cmd/aegis-keygen
+          python3 scripts/test-publication.py
+      - name: Establish previous release
+        id: previous
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: bash scripts/fetch-previous.sh
+      - name: Build, gate, sign and verify
+        id: build
+        env:
+          AEGIS_SIGNING_SEED: ${{ secrets.AEGIS_SIGNING_SEED }}
+          AEGIS_PUBLIC_KEY: ${{ vars.AEGIS_PUBLIC_KEY }}
+          AEGIS_PREVIOUS_PUBLIC_KEY: ${{ vars.AEGIS_PREVIOUS_PUBLIC_KEY }}
+          PREVIOUS: ${{ steps.previous.outputs.previous }}
+        run: |
+          args=()
+          if [[ -n "$PREVIOUS" ]]; then args+=(-previous "$PREVIOUS"); fi
+          bin/aegis-builder -repository "$GITHUB_REPOSITORY" "${args[@]}"
+      - name: Publish verified draft
+        if: steps.build.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          AEGIS_PUBLIC_KEY: ${{ vars.AEGIS_PUBLIC_KEY }}
+        run: bash scripts/publish-release.sh
+      - name: Run summary
+        if: always()
+        env:
+          CHANGED: ${{ steps.build.outputs.changed }}
+          TAG: ${{ steps.build.outputs.tag }}
+          STATUS: ${{ job.status }}
+        run: |
+          if [[ "$STATUS" != success ]]; then
+            printf 'Build or publication stopped. Previous published release retained. Review failed step.\n' >> "$GITHUB_STEP_SUMMARY"
+          elif [[ "$CHANGED" == false ]]; then
+            printf 'Sources validated; compiled rules unchanged. Existing release retained.\n' >> "$GITHUB_STEP_SUMMARY"
+          else
+            printf 'Published signed and verified dataset: %s\n' "$TAG" >> "$GITHUB_STEP_SUMMARY"
+          fi
